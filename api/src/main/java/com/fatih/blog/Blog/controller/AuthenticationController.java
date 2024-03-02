@@ -1,20 +1,19 @@
-package com.target.api.target.controller;
+package com.fatih.blog.Blog.controller;
 
-import com.target.api.target.dto.JwtAuthenticationResponse;
-import com.target.api.target.dto.RefreshTokenRequest;
-import com.target.api.target.dto.SignInRequest;
-import com.target.api.target.dto.SignupRequest;
-import com.target.api.target.model.UserModel;
-import com.target.api.target.services.AuthenticationService;
+import com.fatih.blog.Blog.model.UserModel;
+import com.fatih.blog.Blog.model.data.request.SignInRequest;
+import com.fatih.blog.Blog.model.data.request.SignupRequest;
+import com.fatih.blog.Blog.model.data.response.JwtAuthenticationResponse;
+import com.fatih.blog.Blog.model.data.response.RefreshTokenRequest;
+import com.fatih.blog.Blog.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-@CrossOrigin("*")
 public class AuthenticationController {
-    @Autowired
+    @Autowired(required = true)
     private AuthenticationService authenticationService;
 
     @PostMapping("/signup")
